@@ -1,0 +1,21 @@
+/* Custom modal width */
+.custom-modal-width {
+    max-width: 700px !important; /* Set the desired maximum width */ 
+ 
+   
+  }
+  
+@media screen and (max-width:576px) {
+  .curstom-margin {
+     margin: 0 !important; 
+  }
+}
+.absolute{
+  position: absolute;
+  right: 10px;
+  top:10px;
+}
+.custom-toast {
+position: absolute;
+top: 0;
+}

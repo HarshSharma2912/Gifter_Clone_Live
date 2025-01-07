@@ -1,0 +1,180 @@
+<div class="container py-1"><span class="font12 grayText cursor trans orangeHover" >Contact</span>
+</div>
+<div class="bg-white">
+
+    <div class="text-center py-2 border-bottom">
+        <div class="container-xl cursor" (click)="navigateTo('/home')">
+            <img src="https://benepik.co.in/benepik/assets/dist/img/mainlogo.png" style="max-width:140px">
+        </div>
+    </div>
+
+    <div class="container ">
+
+
+        <div class="row mx-0">
+
+            <div class="col-md-9 col-12 px-0  ">
+                <router-outlet></router-outlet>
+            </div>
+
+            <div class="col-md-3 col-12 px-0">
+
+                <div class="py-3 topBor mt-3">
+                    <input type="search" placeholder="search" class="form-control rounded-0">
+                </div>
+
+                <div class="topBor">
+                    <p class="fw-bold my-3 lhspace">RECENT POSTS</p>
+                    <ul class="font14 ulpadding">
+                        <li *ngFor="let val of [].constructor(6)">
+                            <span class="listitem cursor trans" (click)="navigateTo('/blog/blogDisc')">Ganesh Chaturthy
+                                Delight with Gift</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topBor  ">
+                    <p class="fw-bold my-3 lhspace"> RECENT COMMENTS</p>
+                </div>
+
+
+                <div class="topBor  ">
+                    <p class="fw-bold my-3 lhspace">ARCHIVES</p>
+
+                    <ul class="ulpadding font14">
+                        <li *ngFor="let value of [].constructor(30)">
+                            <span class="listitem cursor trans" (click)="navigateTo('/blog/blogDisc')">September 2023</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topBor  ">
+                    <p class="fw-bold my-3 lhspace">
+                        CATEGORIES
+                    </p>
+                    <ul class="ulpadding font14">
+                        <li *ngFor="let value of [].constructor(10)">
+                            <span class="listitem cursor trans" (click)="navigateTo('/blog/blogDisc')"> Gift Cards</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topBor">
+                    <p class="fw-bold lhspace my-3">
+                        META
+                    </p>
+
+                    <ul class="ulpadding font14">
+                        <li><span class="listitem cursor">Log in</span> </li>
+                        <li><span class="listitem cursor">Entries</span> </li>
+                        <li><span class="listitem cursor">Log in</span> </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <br><br>
+
+</div>
+
+
+<div class="">
+
+    <div class="container-sm px-0">
+        <div class="toTop py-2 text-center font15 cursor d-md-none d-block" (click)="backToTop()">BACK TO TOP</div> 
+    </div>
+
+    <div class="container-sm">
+        <div class="categories1 py-3 lh-sm">
+            <span class="lhspace font13">CATEGORY : </span>
+            <span class="font12 cateParts" *ngFor="let cate of Data , index as index">
+                <span class="cursor footText trans" (click)="navigateToCommon('/category',index)">{{cate.Heading}}</span>
+            </span>
+        </div>
+        <div class="smallBorder"></div>
+
+        <div class="categories py-3 lh-sm">
+            <span class="lhspace font13">BRANDS : </span>
+            <span class="font12  cateParts" *ngFor="let cate of Data[0].images, index as index">
+                <span class="cursor footText trans" (click)="navigateToDiscription(index)"> {{cate.title}}</span>
+            </span>
+        </div>
+        <div class="smallBorder"></div>
+
+
+        <div class="row mx-0 py-md-5 py-3">
+
+            <div class="col-md-4 ps-0 ">
+                <div class="">
+                    <p class="fw-bold mb-0 py-2 border-bottom">ABOUT</p>
+
+                    <div class="child mt-md-3 mt-2">
+                        <p class="font14 grayText mb-1 "><span class="trans footText cursor">Contact Us</span> </p>
+                        <p class="font14 grayText  "><span class="trans footText cursor">Blogs</span> </p>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+            <div class="col-md-4 ps-md-2 ps-0">
+                <div class="">
+                    <p class="fw-bold mb-0 py-2 border-bottom">HELP</p>
+
+                    <div class="child mt-md-3 mt-2">
+                        <p class="font14 grayText "><span class="trans footText cursor">helper@benepik.com</span> </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-4 ps-md-2 ps-0">
+                <div class="">
+                    <p class="fw-bold mb-0 py-2 border-bottom">SOCIAL</p>
+
+                    <div class="child mt-md-3 mt-2">
+                        <i class="fa-brands fa-square-facebook grayText fs-4 cursor trans footText"></i>
+                        <i class="fa-brands fa-twitter grayText fs-4 mx-2 cursor trans footText"></i>
+                        <i class="fa-brands fa-instagram grayText fs-4 cursor trans footText"></i>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-8"></div>
+            <div class="col-md-4 col-12 ps-md-2 ps-0 mt-md-0 mt-3 mb-md-0 mb-5">
+                <div class="">
+
+                    <p (click)="isCollapsed = !isCollapsed" class="fw-bold mb-0 py-2 border-bottom d-md-none d-block">
+                        DOWNLOAD THE APP</p>
+                    <p class="fw-bold mb-0 py-2 border-bottom d-none d-md-block">DOWNLOAD THE APP</p>
+
+                    <div id="collapseEvent" [isAnimated]="true" [collapse]="isCollapsed" (expanded)="expanded()"
+                        (collapsed)="collapsed()">
+
+                        <div class="child mt-md-3 mt-2">
+                            <i class="fa-brands fa-google-play grayText fs-4 cursor trans footText"></i>
+                            <i class="fa-brands fa-app-store grayText fs-4 cursor trans mx-2 footText"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

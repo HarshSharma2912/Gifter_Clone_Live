@@ -1,0 +1,100 @@
+<div class="footer mt-3 px-md-3">
+    <div class="container-xl py-4 pb-5 pb-md-2">
+        <div class="row footerTop border-bottom pb-3 ">
+            <div class="col-md-7 col-12 me-auto px-0 text-center text-md-start  ">
+
+
+                <ul class="list-inline m-0 text-center text-md-start pFont14 px-2 px-sm-0">
+                    <li class="list-inline-item  ">
+                        <span class="footerSide ps-0"><span class="cursor">Contact
+                                Us</span></span>
+                    </li>
+
+                    <li class="list-inline-item"><span class="footerSide"><span class="cursor"
+                                (click)="navigateTo('/footer/AboutUs', 'About Us')">About
+                                Us</span>
+                        </span>
+                    </li>
+                    <li class="list-inline-item"><span class="footerSide"><span class="cursor"
+                                (click)="navigateTo('/footer/faqs', 'FAQs')">FAQs</span>
+                        </span>
+                    </li>
+                    <li class="list-inline-item"><span class="footerSide cursor"
+                            (click)="navigateTo('/blog', 'blog')"><span>Blog</span>
+                        </span>
+                    </li>
+                    <li class="list-inline-item"> <span class="footerSide"><span class="cursor" (click)="ModalShow()">My
+                                Profile</span>
+                        </span>
+                    </li>
+                    <li class="list-inline-item"> <span class="ps-2">
+                            <span class="cursor " (click)="ModalShow()">My
+                                Transactios</span></span>
+                    </li>
+                </ul>
+
+
+            </div>
+
+            <div class="col-md-5 d-none d-md-block text-end pe-0 ">
+
+                <span class="footerSide">Social Media:</span>
+                <span class="footerSide"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                <span class="footerSide"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                <span class="footerSide"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                <span class="ps-2"><i class="fa fa-youtube-play" aria-hidden="true"></i></span>
+            </div>
+        </div>
+
+        <div class="row  py-3">
+
+            <div class="col-lg-4 col-sm-6 col-5 d-sm-block d-md-none order-1 order-md-0 pb-3 pFont13 px-0 ">
+                <span class="footerSide"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                <span class="footerSide"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                <span class="footerSide"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                <span class=" ps-2"><i class="fa fa-youtube-play" aria-hidden="true"></i></span>
+            </div>
+
+            <div class="col-md-8 text-center text-md-start pt-md-0 pt-3 px-5 px-sm-0 order-3 order-md-0"
+                [ngClass]="{'topBorder': !isMediumScreen() }">
+
+                <ul class="list-inline m-0 text-center text-md-start footerBottom">
+                    <li class="list-inline-item  ">
+                        <span class="footerSide ps-0"><span class="cursor"
+                                (click)="navigateTo('/footer/privacyPolicy', 'Privacy Policy')">Privacy
+                                Policy</span>
+                        </span>
+                    </li>
+
+                    <li class="list-inline-item  ">
+                        <span class="footerSide">
+                            <span class="cursor" (click)="navigateTo('/footer/terms', 'Terms of Use')">Terms of
+                                Use</span>
+                        </span>
+                    </li>
+
+
+                    <li class="list-inline-item  ">
+                        <span class="footerSide">
+                            <span class="cursor" (click)="navigateTo('/loyalty', 'L')">Loyalty-Program</span>
+                        </span>
+                    </li>
+
+                    <li class="list-inline-item  ">
+                        <span class=" ps-2">
+                            <span class="cursor">Site Map</span>
+                        </span>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-7 me-auto order-2 order-md-0 text-end px-0 pe-md-0 pe-3 pb-3 pFont13 ">
+                <span class="footerSide font14 ps-0">Download the App: </span>
+                <span class="footerSide"><i class="fa-brands fa-google-play"></i></span>
+                <span class="ps-2"><i class="fa-brands fa-app-store"></i></span>
+            </div>
+        </div>
+    </div>
+</div>

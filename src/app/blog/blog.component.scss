@@ -1,0 +1,53 @@
+
+.topBor{
+  border-top: solid 4px black;
+}
+ 
+.trans{
+  transition: .5s;
+
+}
+.orangeHover:hover{
+  color: #f89c2e;
+}
+.ulpadding{
+  padding-left: 20px;
+}
+.lhspace{
+  letter-spacing: 1px;
+
+}
+.listitem{
+  color: #f89c2e;
+}
+.listitem:hover{
+  color: gray;
+}
+.cateParts{
+  padding: 0 10px;
+  border-right: solid 1px gray;
+ 
+}
+.footText{
+  color: gray;
+}
+.footText:hover{
+  color: black;
+}
+.smallBorder{
+  width: 30px;
+  height: 5px;
+  background-color: #666;
+}
+
+.categories1{
+  word-break: break-all;
+}
+.grayText{
+  color: gray;
+}
+
+.toTop{
+  background-color: #888888;
+  color: white;
+}

@@ -1,0 +1,15 @@
+.postionStick{
+    position: sticky;
+    top: 0;
+    color: gray;
+    cursor: pointer;
+}
+
+.black{
+    color: black;
+}
+.stickyBlack{
+    border-right: 5px solid #767373;
+    color: black;
+    margin-right: -3px; 
+}

@@ -1,0 +1,80 @@
+.grayBox{
+  background-color: #DBDCDC;
+  padding: 5px 0;
+  font-size: 13px;
+  cursor: pointer;
+
+}
+.font{
+  font-size: 13px;
+  cursor: pointer;
+}
+.box{
+  padding: 0 8px 8px 0;
+  text-align: center;
+}
+.grayBack{
+  background-color: #6C757D;
+  color: white;
+}
+.cursor{
+  cursor: pointer;
+}
+.reset{
+  color: blue;
+}
+.cateValue{
+  background-color:#DBDCDC;
+}
+.fa-check{
+  color: rgb(40, 163, 212);
+}
+.cateValue1{
+  background-color:#DBDCDC;
+}
+
+#offcanvasBottom1{
+  height: 90%;
+  // bottom: 43px;
+}
+.font12{
+  font-size: 12px;
+}
+.dataHeading{
+  letter-spacing: 1px;
+  padding-left: 11px;
+}
+
+.search{
+  position: absolute;
+ right: 0;
+ top:0;
+ bottom: 0;
+ background-color: #000;
+ color: white;
+ padding: 6px 15px 7px 15px;
+}
+
+.searchIcon{
+ position: absolute;
+ left: 6px; 
+ top:13px; 
+ 
+
+}
+.searchList{
+ position: absolute;
+ top:35px;
+ background: white;
+ z-index: 5;
+ left: 0;
+ right: 0;
+ height: auto;
+ max-height: 400px;
+ overflow: auto;
+  
+}
+.greenHover{
+ background-color:#B8D64D;
+ color: white;
+}

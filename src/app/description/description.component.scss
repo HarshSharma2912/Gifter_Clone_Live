@@ -1,0 +1,186 @@
+.Redeemable{
+ 
+    color: #119E00;
+}
+.leftArrow{
+    position: absolute;
+    left: -15px;
+}
+.rightArrow{
+    position: absolute;
+    right: -15px;
+}
+
+.redeemNow{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #e3f2ff;
+}
+.Buttonhov:hover{
+ background-color: #d3e9fc;
+ 
+}
+.rightButton1{
+    background: url(https://www.gyftr.com/static/icons/instruction.png) no-repeat;
+    background-position: 20px center;
+}
+.rightButton2{
+    background: url(https://www.gyftr.com/static/icons/location-marker.png) no-repeat;
+    background-position: 20px center;
+}
+.rightButton3{
+    background: url(https://www.gyftr.com/static/icons/numbers.png) no-repeat;
+    background-position: 20px center;
+}
+
+.promocod{
+    background: url(https://www.gyftr.com/static/images/promo-bg.png) no-repeat;
+    background-position: 5px center;
+    padding: 5px 0 5px 30px;
+  
+     
+}
+
+.cupon{
+    width: 50%;
+}
+ 
+.apply{
+    background-color: #f3f3f3;
+    margin-bottom: 1px;
+    // padding: 4px 10px;
+  }
+
+  .ellipsis-text {
+    white-space: nowrap;     /* Prevent text from wrapping to the next line */
+    overflow: hidden;        /* Hide any overflowing content */
+    text-overflow: ellipsis; /* Display ellipsis (...) for truncated text */
+    max-width: 100%;         /* Ensure the text doesn't exceed its container width */
+  }
+.descButton{
+    background-color: #e3f2ff;
+}
+
+.borderRight{
+    border-right: solid 1px #d5cece;
+}
+.leftArrowUPI{
+    position: absolute;
+    top:55%;
+    left: 8px;
+    color: gray;
+ 
+}
+ 
+.rightArrowUPI{
+    position: absolute;
+    top: 55%;
+    right: 8px;
+    color: gray;
+}
+@media screen and (max-width : '768px') {
+    .sticky{
+        position: sticky;
+        top: 0;
+    }
+    .rightArrowUPI{ 
+        right: 0; 
+    }
+    .leftArrowUPI{ 
+        left: 0; 
+    }
+
+.searchButtonn{ 
+    padding: 6px 30px !important;
+  
+}
+}
+
+.payGreen{
+    position: absolute;
+    background-color: #119e002b;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-bottom: solid 1px #119E00;
+}
+.rowBack{
+    background-color: #f7f7f7;
+}
+
+.green{
+    color: #119E00;
+}
+.blue{
+    color: #00B4FF;
+}
+
+
+.rightArrowBank{
+    position: absolute;
+    top: 40%;
+    right: 8px;
+    color: gray;
+}
+.leftArrowBank{
+    position: absolute;
+    top: 40%;
+    left: 8px;
+    color: gray;
+}
+.rigtArrowimages{
+    position: absolute;
+    top: 43%;
+    right: -4px;
+    color: gray;
+}
+.leftArrowimages{
+    position: absolute;
+    top: 43%;
+    left: -4px;
+    color: gray;
+}
+
+.buttonColor{
+    background-color: #e3f2ff;
+    padding: 16px 15px;
+}
+
+.minHeight{
+    min-height: 70px;
+}
+ 
+@media screen and (max-width: '576px') {
+
+    .minHeight{
+        min-height: 135px;
+    }
+    .cupon{
+        width: 100%;
+    }
+    .buttonColor{
+         padding: 12px 15px !important;
+    }
+}
+
+.bottomBorder{
+    border-bottom: solid 2px gray;
+}
+.modalNav li{
+    padding: 0 13px;
+}
+
+
+.searchButtonn{
+    position: absolute;
+    right: 0;
+    color: white;
+    padding: 6px 68px;
+   background-color: #212529;
+   z-index: 6; 
+}
+ 
+ 

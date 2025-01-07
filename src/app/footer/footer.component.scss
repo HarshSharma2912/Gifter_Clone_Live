@@ -1,0 +1,39 @@
+.footer{
+    background-color: #343539 !important;
+    color: white;
+  }
+  .footerSide{
+    padding: 0 10px;
+    border-right: solid white 1px;
+  
+  }
+
+  @media screen and (max-width : '576px') {
+    .footerSide{
+      padding: 0 7px;
+ 
+    
+    }
+  }
+  .footerTop{
+    font-size: 15px;
+  }
+  .footerBottom{
+    font-size: 13px;
+  }
+
+  .topBorder{
+    border-top:solid white 1px;
+  }
+
+  .font14{
+    font-size: 14px;
+  }
+ 
+.cursor{
+  cursor: pointer;
+}
+
+.list-inline-item{
+  margin: 0 !important;
+}

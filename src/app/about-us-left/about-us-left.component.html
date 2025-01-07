@@ -1,0 +1,26 @@
+<div class="postionStick ">
+    <div class="pe-2 " (click)="changeMenu(1)" [ngClass]="{'black' : isColor == 1 , 'stickyBlack' : isBlack == 1}"
+        (mouseenter)="isColor = 1" (mouseleave)="isColor = -1">
+        <div class="border-bottom py-3" (click) = "navigateTo('/footer/faqs', 'FAQs')">FAQs</div>
+    </div>
+    <div class="pe-2" (click)="changeMenu(2)"
+        [ngClass]="{'black' : isColor == 2 , 'stickyBlack' : isBlack == 2}" (mouseenter)="isColor = 2"
+        (mouseleave)="isColor = -1">
+        <div class="border-bottom py-3" (click) = "navigateTo('/footer/AboutUs', 'About Us')">About Us</div>
+    </div>
+    <div class="pe-2" (click)="changeMenu(3)"
+        [ngClass]="{'black' : isColor == 3 , 'stickyBlack' : isBlack == 3}" (mouseenter)="isColor = 3"
+        (mouseleave)="isColor = -1">
+        <div class="border-bottom py-3" (click) = "navigateTo('/footer/terms', 'Terms & Condition')">Terms & Condition </div>
+    </div>
+    <div class="pe-2" (click)="changeMenu(4)"
+        [ngClass]="{'black' : isColor == 4 , 'stickyBlack' : isBlack == 4}" (mouseenter)="isColor = 4"
+        (mouseleave)="isColor = -1">
+        <div class="border-bottom py-3" (click) = "navigateTo('/footer/privacyPolicy', 'Privacy Policy')">Privacy Policy</div>
+    </div>
+    <div class="pe-2" (click)="changeMenu(5)"
+        [ngClass]="{'black' : isColor == 5 , 'stickyBlack' : isBlack == 5}" (mouseenter)="isColor = 5"
+        (mouseleave)="isColor = -1">
+        <div class="border-bottom py-3"  (click)="navigateTo('/blog', 'blog')">Blog</div>
+    </div>
+</div>

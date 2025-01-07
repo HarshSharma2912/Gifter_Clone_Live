@@ -1,0 +1,22 @@
+<app-top-header></app-top-header>
+<app-header class="d-md-block d-none"></app-header>
+<div class="p-3">
+
+    
+    <div class="aboutUs container-xl bg-white  ">
+        
+        <div class="fw-bold fs-5 py-2 border-bottom mb-2">
+            <h4 class="mb-0 py-1">{{Heading}}</h4>
+        </div>
+        <div class="row mx-0">
+            <div class="col-lg-3 col-md-4 d-none d-md-block border-end px-0">
+                <app-about-us-left></app-about-us-left>
+            </div>
+            <div class="col-lg-9 col-md-8">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

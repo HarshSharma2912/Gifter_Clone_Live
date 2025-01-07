@@ -1,0 +1,34 @@
+.readmore{
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    padding: 10px 10px;
+    border-radius: 5px;
+  }
+  .two-lines-ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+.hoverHead:hover{
+    color: #f89c2e;
+}
+.trans{
+  transition: .5s;
+}
+
+.paginationButton{
+  background: #1a1a1a;
+  color: white;
+  border: 0;
+  padding: 15px 25px;
+}
+.disable{
+  color: gray;
+}
+.hoverBlue:hover{
+  
+  background-color: #007acc;
+}

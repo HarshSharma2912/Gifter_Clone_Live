@@ -1,0 +1,85 @@
+
+<!-- 
+<div class="navBar py-2 mt-1" style="overflow: auto;">
+    <div class="container-xl ">
+
+
+        <nav class="d-flex ">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+
+            <div class="">
+                <ul class="d-flex mb-0">
+                    <li class="nav-item dropdown px-2" *ngFor="let navItem of navArr">
+                        <a class="nav-link " [routerLink]="navItem.rout" aria-haspopup="true" aria-expanded="false">
+                            {{navItem.heading}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="row">
+                                <div class="col-4" *ngFor="let subItem of navItem.first">
+                                    <a class="dropdown-item" href="#">{{subItem}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div> -->
+
+<!-- <pre class="card card-block card-header">{{ myForm?.value.radio }}</pre> -->
+
+<!-- <div class="container-xl">
+    <div class="row">
+
+        <div class="col-auto py-1" style="background-color: #B8D64D;">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      
+
+        </div>
+
+        <div class="col-auto px-0 align-self-center">  
+            <ul class="mb-0 px-0 dropRelative">
+                
+                <li  class="d-inline py-3 pe-2 ps-3 listItem" *ngFor="let item of navArr; index as index" (mouseenter)="showDiv = index" (mouseleave)="showDiv = -1" style="cursor: pointer;" (click)="passCurrentIndex(index)">
+               <a  style="text-decoration: none; color: gray;">{{item.heading}}</a>
+                </li>
+
+                <div class="drop" *ngFor="let item of navArr; index as idx"  (mouseenter)="showDiv = idx" (mouseleave)="showDiv = -1" >  
+                    <div (mouseenter)="showDiv = idx" (mouseleave)="showDiv = -1">
+
+                        <div class="row ps-3 pb-2 pe-3"   *ngIf="showDiv == idx">
+                            <div class="col-12 border-bottom mb-1"> <p class="my-2 fw-bold">{{item.heading}}</p></div>
+                            <div class="col-4 bgGrayHover align-self-center"  *ngFor="let subitem of item.first">
+                                <p [ngClass]="{'decorate':subitem == 'View More'}" class="mb-0 py-2" style="cursor: pointer; font-size: 12px;">{{subitem}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </ul>
+        </div>
+        
+        <div class="col-12 col-lg-auto col-xl-3">
+
+        </div>
+    </div>
+</div> -->
+
+
+
+<router-outlet></router-outlet>
+ <!-- <app-blog></app-blog> -->
+
+<app-bottom-nav></app-bottom-nav>
+
+
+<div class="boatIcon d-md-block d-none">
+    <img src="https://chat.gvhelpdesk.com/images/1609252731chat-icon.png" class="img-fluid  imgFixed"  width="60" height="60"> 
+</div>
+<div class="boatIcon2 d-md-none">
+    <img src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2FWhatsapp-Help-icon.png&w=256&q=75" class="m-auto " width="55" height="55">
+</div>
+
+
+<app-modal *ngIf="showCommonModal"></app-modal>

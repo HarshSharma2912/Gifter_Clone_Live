@@ -1,0 +1,121 @@
+<ul class="list-inline border-bottom ps-1 navScroll">
+    <li class="list-inline-item font13 text-muted cursor p-2 " [ngClass]="{'addBorderBottom': isShow == 'topQueries'}" (click)="ChangeBrand('topQueries')">
+        Top Queries
+    </li>
+
+    <li class="list-inline-item font13 text-muted cursor p-2" [ngClass]="{'addBorderBottom': isShow == 'topBrand'}" (click)="ChangeBrand('topBrand')">
+        Top Brands
+    </li>
+
+    <li class="list-inline-item font13 text-muted cursor p-2" [ngClass]="{'addBorderBottom': isShow == 'AllFAQ'}" (click)="ChangeBrand('AllFAQ')">
+        All FAQ
+    </li>
+</ul>
+
+
+<div class="TopQueries wordBreak" *ngIf="isShow == 'topQueries'">
+
+<div class="FAQs px-3" [ngClass]="{'addBorder': currentBox == index && showContent}" *ngFor="let i of [].constructor(10); index as index">
+    <div class="row mx-0 cursor" (click)="toggleContent(index)">
+        <div class="col-10 px-0">
+            How can I use my Gift Voucher ?
+        </div>
+        <div class="col-2 px-0 text-end">
+             <i *ngIf="!(currentBox == index && showContent)"  class="fa-solid fa-plus"></i>
+             <i *ngIf="currentBox == index && showContent"  class="fa-solid fa-minus"></i>
+        </div>
+
+        <div class="col-12">
+          
+        </div>
+    </div>
+
+
+    <div *ngIf="currentBox == index && showContent" class="subItme font14" >
+        <br>
+        Not only are our vouchers delivered instantly,they are also very easy to redeem. A voucher that can be
+        used at a store simply needs to be presented at the cash counter at the time of billing. The voucher
+        amount is adjusted and the remaining amount of the bill, if any, will need to be paid in cash/card.
+        Please note that these are one-time use vouchers. To make the most of it, try using vouchers if the
+        billing value is equal to or more than the voucher amount.<br><br>
+
+        For online redemptions, please visit the brand page on https://www.gyftr.com/ and check the steps of
+        redemption.<br><br>
+
+        We also have some videos of major brands on our YouTube page. Please visit
+        https://www.youtube.com/channel/UC77oKpGJATvhz0hmmbOLN1g and subscribe to our channel and get to see the
+        easy-to-understand video tutorials of various brands. We ensure that up-to-d
+    </div>
+</div>
+</div>
+
+
+<div class="TopBrands wordBreak" *ngIf="isShow == 'topBrand'"> 
+    <div class="FAQs px-3" [ngClass]="{'addBorder': currentBox == index && showContent}" *ngFor="let i of [].constructor(10) ; index as index">
+        <div class="row mx-0 cursor" (click)="toggleContent(index)">
+            <div class="col-10 px-0">
+                This is TopQueries
+            </div>
+            <div class="col-2 text-end">
+                 <i *ngIf="!(currentBox == index && showContent)"  class="fa-solid fa-plus"></i>
+                 <i *ngIf="currentBox == index && showContent"  class="fa-solid fa-minus"></i>
+            </div>
+    
+            <div class="col-12">
+              
+            </div>
+        </div>
+    
+    
+        <div *ngIf="currentBox == index && showContent" class="subItme font14" >
+            <br>
+            Not only are our vouchers delivered instantly,they are also very easy to redeem. A voucher that can be
+            used at a store simply needs to be presented at the cash counter at the time of billing. The voucher
+            amount is adjusted and the remaining amount of the bill, if any, will need to be paid in cash/card.
+            Please note that these are one-time use vouchers. To make the most of it, try using vouchers if the
+            billing value is equal to or more than the voucher amount.<br><br>
+    
+            For online redemptions, please visit the brand page on https://www.gyftr.com/ and check the steps of
+            redemption.<br><br>
+    
+            We also have some videos of major brands on our YouTube page. Please visit
+            https://www.youtube.com/channel/UC77oKpGJATvhz0hmmbOLN1g and subscribe to our channel and get to see the
+            easy-to-understand video tutorials of various brands. We ensure that up-to-d
+        </div>
+    </div>
+</div>
+
+<div class="AllFAQ wordBreak" *ngIf="isShow == 'AllFAQ'"> 
+    <div class="FAQs px-3" [ngClass]="{'addBorder': currentBox == index && showContent}" *ngFor="let i of [].constructor(10) ; index as index">
+        <div class="row mx-0 cursor" (click)="toggleContent(index)">
+            <div class="col-10 px-0">
+               How do I update my phone number ?
+            </div>
+            <div class="col-2 text-end">
+                 <i *ngIf="!(currentBox == index && showContent)"  class="fa-solid fa-plus"></i>
+                 <i *ngIf="currentBox == index && showContent"  class="fa-solid fa-minus"></i>
+            </div>
+    
+            <div class="col-12">
+              
+            </div>
+        </div>
+    
+    
+        <div *ngIf="currentBox == index && showContent" class="subItme font14" >
+            <br>
+            Not only are our vouchers delivered instantly,they are also very easy to redeem. A voucher that can be
+            used at a store simply needs to be presented at the cash counter at the time of billing. The voucher
+            amount is adjusted and the remaining amount of the bill, if any, will need to be paid in cash/card.
+            Please note that these are one-time use vouchers. To make the most of it, try using vouchers if the
+            billing value is equal to or more than the voucher amount.<br><br>
+    
+            For online redemptions, please visit the brand page on https://www.gyftr.com/ and check the steps of
+            redemption.<br><br>
+    
+            We also have some videos of major brands on our YouTube page. Please visit
+            https://www.youtube.com/channel/UC77oKpGJATvhz0hmmbOLN1g and subscribe to our channel and get to see the
+            easy-to-understand video tutorials of various brands. We ensure that up-to-d
+        </div>
+    </div>
+</div>

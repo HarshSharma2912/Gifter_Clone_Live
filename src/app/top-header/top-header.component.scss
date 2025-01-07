@@ -1,0 +1,36 @@
+.search{
+     position: absolute;
+    right: 0;
+    top:0;
+    bottom: 0;
+    background-color: #000;
+    color: white;
+    padding: 6px 15px 7px 15px;
+  }
+
+  .searchIcon{
+    position: absolute;
+    left: 6px; 
+    top:9px; 
+ 
+   }
+  .searchList{
+    position: absolute;
+    top:35px;
+    background: white;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    height: auto;
+    max-height: 293px;
+    overflow: auto;
+     
+  }
+  .greenHover{
+    background-color:#B8D64D;
+    color: white;
+  }
+   
+.addCoffeeColor{
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}

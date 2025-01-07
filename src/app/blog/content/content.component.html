@@ -1,0 +1,48 @@
+<!-- <div class="row mx-0 pe-md-5 pe-0">
+    <div class="col-md-6 col-12 mt-3" *ngFor="let value of [].constructor(100) | paginate
+    : {
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+    };
+    let i = index">
+
+    <div class="p-1 border pb-5 mb-3"> 
+        <img [src]="blog[0].img" class="img-fluid cursor">
+        <h5 class="fw-bold hoverHead cursor mt-2 px-2 trans">{{blog[0].title}}</h5>
+        <p class="two-lines-ellipsis mb-2 px-2">{{blog[0].para}}</p>
+        <span class="readmore mx-2 cursor " (click)="navigateTo('/blog/blogDisc')">read more</span>
+    </div>
+
+    </div>
+ <pagination-controls show-prev-next="false" class="custom-pagination" previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+</pagination-controls>
+
+
+
+ 
+ </div> -->
+
+<div class="row  mx-0 pe-md-5 pe-0">
+    <div class="col-md-6 col-12 mt-3 p-md-2 p-0" *ngFor="let value of blog.slice(initial,final)  let idx = index">
+
+        <div class="border pb-5 mb-3">
+            <img [src]="value.img" class="img-fluid cursor">
+            <h5 class="fw-bold hoverHead cursor mt-2 px-2 trans">{{value.title}}</h5>
+            <p class="two-lines-ellipsis mb-2 px-2">{{value.para}}</p>
+            <span class="readmore mx-2 cursor " (click)="navigateTo('/blog/blogDisc')">read more</span>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="px-md-2 px-0 mb-md-0 mb-5">
+    <button (click)="prevPage()" class="paginationButton" [ngClass]="{'disable':prevDisable,'hoverBlue':!prevDisable}"
+        [disabled]="prevDisable"><i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <button (click)="nextPage()" class="paginationButton ms-2"
+        [ngClass]="{'disable':nextDisable,'hoverBlue':!nextDisable}" [disabled]="nextDisable"><i
+            class="fa-solid fa-arrow-right"></i>
+    </button>
+</div>

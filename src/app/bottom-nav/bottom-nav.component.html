@@ -1,0 +1,113 @@
+<div class="d-md-none bottomNav z1055">
+ 
+    <ul class="mb-0 text-center ps-0 bg-white relative z1055">
+        <li>
+            <!-- <div (click)="goToHome();openModal()"> -->
+            <div (click)="goToHome()">
+
+                <img alt="Home"
+                    src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Ffooter-home.png&w=32&q=75"
+                    width="20" height="18" style="color:transparent">
+                <p class="bottomTitle">HOME</p>
+            </div>
+
+        </li>
+
+        <li>
+            <div data-bs-target="#offcanvasBottom" data-bs-toggle="offcanvas" class="d-inline-block"
+                (click)="pasCategory('category')">
+
+                <img alt="Category"
+                    src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Ffooter-categories.png&w=32&q=75"
+                    height="18" style="color:transparent">
+                <p class="bottomTitle">CATEGORY</p>
+            </div>
+        </li>
+
+        <li>
+            <div class="middle_bottom m-auto" data-bs-target="#offcanvasBottom" data-bs-toggle="offcanvas"
+                (click)="pasCategory('offer')">
+                <div class="Offer">
+                    <img alt="Offers"
+                        src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Ffooter-offer.png&w=32&q=75"
+                        width="26" height="26" class="">
+                    <p class="bottomTitle">OFFER</p>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div (click)="ModalShow()"> 
+                <img alt="Profile"
+                src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Ffooter-user.png&w=32&q=75" width="20"
+                height="18" style="color:transparent">
+                <p class="bottomTitle">PROFILE</p>
+            </div>
+        </li>
+        <li>
+            <div (click)="ModalShow()"> 
+                <img alt="Cart"
+                src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Ffooter-categories.png&w=32&q=75"
+                width="20" style="color:transparent">
+                <p class="bottomTitle">CART</p>
+            </div>
+        </li>
+
+
+
+
+
+        <!-- <div class="bottomNavPos" [ngClass]="{'navSlider' : showCategory , 'navUnder' : !showCategory   }">
+            <div *ngIf="true" class="closeOutside" (click)="showBottom('outside')">
+
+            </div>
+
+            <div class="bottomSlide text-start ">
+                <h4 class="mb-0 p-3 border-bottom">Categories</h4>
+                <div *ngFor="let catItem of Data" class="BottomCategories border-bottom p-2 px-3 font13">
+                    {{catItem.Heading}}
+                </div>
+            </div>
+        </div> -->
+    </ul>
+
+
+
+    <div class="offcanvas offcanvas-bottom  pb-md-0 pb-5" tabindex="-1" id="offcanvasBottom"
+        aria-labelledby="offcanvasBottomLabel" [ngClass]="{'canvas460' : navBottom == 'category' , 'canvas580' : navBottom == 'offer'}">
+        <div class="offcanvas-header border-bottom commonBg">
+            <h5 class="offcanvas-title text-muted text-capitalize" id="offcanvasBottomLabel">{{navBottom}}</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body small py-0 px-1">
+
+ 
+
+            <div *ngIf="navBottom == 'category'"> 
+                <div *ngFor="let catItem of Data ; index as index"
+                    class="BottomCategories border-bottom p-2 px-3 font13 text-muted" (click)="passIndex(index)"
+                    data-bs-dismiss="offcanvas">
+                    {{catItem.Heading}}
+                </div>
+            </div>
+
+
+
+            <div *ngIf="navBottom == 'offer'" class="mt-1">  
+                <div class="row   mx-1 mb-1 mx-0 cursor minHeight bg-white p-2" *ngFor="let data of offerImg; index as idx">
+                    <div class="col-4 px-0">
+                        <div class="BankImages h-100">
+                            <img [src]="data.img" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-8 p-2 " [ngClass]="{'bgblue': idx%2 == 0, 'bgred' : idx%2 !=0}">
+                        <p class="mb-1 font18">{{data.heading}}</p>
+                        <p class="my-0 font13 lh-1 h-100">{{data.text}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>

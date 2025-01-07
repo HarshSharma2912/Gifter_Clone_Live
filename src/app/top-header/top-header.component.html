@@ -1,0 +1,117 @@
+<div class="">
+    <div *ngIf="showModal" class="closeOutside" (click)="toggleSidenav(false)">
+
+    </div>
+
+    <div [ngClass]="{'sideNavParent' : showModal}">
+        <div class="displayNone" [ngClass]="{'sidenavClose' : closeSide ,'sidenav':showModal}">
+
+
+
+            <div>
+
+                <div class="closeSideNav" (click)="toggleSidenav(false);">
+                    <img class="img-fluid cursor"
+                        src="https://www.pngitem.com/pimgs/m/463-4637625_x-button-close-x-button-png-transparent-png.png">
+                </div>
+
+                <div class="px-3">
+
+                    <div  *ngFor="let drawerItem of drawerArr"
+                        class="text-muted font13 border-bottom mb-0 cursor py-2">
+
+                        <div *ngIf="drawerItem == 'CATEGORIES' || drawerItem == 'OCCASIONS'; else elseBlock"
+                            class="mb-0  d-flex justify-content-between" style="cursor: pointer;"
+                            (click)="toggleSidenSubNab(drawerItem)">
+                            <p class="mb-0">{{drawerItem}}</p>
+                            <i class="fa fa-chevron-right text-end pt-1" aria-hidden="true"></i>
+                        </div>
+
+                        <ng-template #elseBlock>
+                            <p (click)="navigateTo(drawerItem)" class="mb-0">{{drawerItem}}</p>
+                        </ng-template>
+
+                    </div>
+
+                </div>
+
+                <div [ngClass]="{'categorySlide' : showSubModal ,'categorySlideClose':!showSubModal }">
+
+
+                    <div class="p-3 cursor">
+                        <div *ngIf="category">
+                            <p class="text-end font13 text-muted" (click)="toggleSidenSubNab(1)">
+                                <i class="fa fa-chevron-left" aria-hidden="true"></i> CATEGORIES
+                            </p>
+                            <p *ngFor="let categoryItem of Data.slice(0,9 ) ; index as index"
+                                class="text-muted font13 border-bottom mb-0 py-2"
+                                (click)="passIndex(index);toggleSidenav(false);toggleSidenSubNab(1)">
+                                {{categoryItem.Heading}}
+                            </p>
+                        </div>
+
+                        <div *ngIf="occasions">
+                            <p class="text-end font13 text-muted" (click)="toggleSidenSubNab(1)">
+                                <i class="fa fa-chevron-left" aria-hidden="true"></i> OCCASIONS
+                            </p>
+                            <p *ngFor="let categoryItem of [].constructor(10) ; index as index"
+                                class="text-muted font13 border-bottom mb-0 py-2"
+                                (click)="toggleSidenav(false);toggleSidenSubNab(1)">
+                                BIRTHDAY GIFT CARD
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="addCoffeeColor"  >
+    <div class="container-xl ">
+
+        <div class="row mx-0 ">
+            <div class="col-6 col-md-3 align-self-center px-0">
+
+                <i style="cursor: pointer;font-size: 30px;" class="fa fa-bars py-2" (click)="toggleSidenav(true)"></i>
+
+                <img src="https://benepik.co.in/benepik/assets/dist/img/mainlogo.png" class="ps-2 pb-2 brandLogo cursor"
+                    width="150" (click)=" goToHome()">
+            </div>
+
+
+            <div class="col-md-6 align-self-center d-md-block d-none">
+
+                <div class="relative"  >
+                    <input #toggleButton [(ngModel)]="searchTerm" class="form-control gray font14 ps-4 rounded-0" [placeholder]="dynamicPlaceholder"
+                        (input)="filterAnimals()"  (click)="searchList = true" />
+                    <ul class="searchList border  ps-0" *ngIf="searchList"  #menu>
+                        <li class="border-bottom font13 p-2 gray cursor" [ngClass]="{'greenHover':searchEnter == index}"
+                            (mouseenter)="searchEnter = index" (mouseout)="searchEnter = -1" (click)=" listItemIndex(index); " [id]="index"
+                            *ngFor="let value of Data[0].images,index as index">{{value.title}}</li>
+                    </ul>
+
+                    <i class="searchIcon fa-solid fa-magnifying-glass"></i>
+                    <div class="search cursor">Search</div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-3 col-6 text-end align-self-center px-0">
+                <span class="pe-0 pe-md-4 cursor font14 relative" (click)="ModalShow()">Log
+                    In/Sign Up <i class="fa-solid fa-cart-shopping fa-lg ps-2"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

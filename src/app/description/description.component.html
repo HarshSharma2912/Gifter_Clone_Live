@@ -1,0 +1,461 @@
+<app-top-header></app-top-header>
+
+ 
+
+
+<app-header class="d-md-block d-none"></app-header>
+<div class="container-xl mt-3 p-0 ">
+
+    <div class="px-md-2  ">
+        <div class="row mx-0 bg-white p-2 ">
+            <div class="col-md-3 p-0">
+                <div class="row mx-0 border text-center relative py-3 pt-md-0 pb-5">
+                    <div class="col-6 col-md-12 align-self-center order-2 order-md-1 ">
+                        <img src="https://www.gyftr.com/static/images/redeem-type.png" class="d-md-inline-block d-none">
+                        <span class="Redeemable font13 pFont12 ps-md-1">Redeemable Outet</span>
+                        <i class="fa-solid fa-circle-check ms-1" style="color: #119E00;"></i>
+                        <p class="d-md-none">(Instant Gift Vouchers)</p>
+
+                    </div>
+
+                    <div class="col-6 col-md-12 order-1 order-md-2 border-end ">
+                        <img [src]="Datapart.images[childIndex].img" class="img-fluid ">
+                    </div>
+
+                    <div class="redeemNow py-1">
+                        Redeem Now
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 col-lg-6 pt-2 ps-4 d-none d-md-inline-block">
+                <div id="carouselExampleAutoplaying" class="carousel slide relative">
+                    <div class="carousel-inner">
+                        <div class="carousel-item ">
+                            <img src="https://cdn.gyftr.com/gyftrweb/brands/reliance_brand_reliance-my-jio-store1677653442.webp"
+                                class="d-block w-100" alt="Wild Landscape" />
+                        </div>
+                        <div class="carousel-item active">
+                            <div class="text">
+                                <h5 class="mb-0 fw-bold text-capitalize">{{Datapart.images[childIndex].title}}</h5>
+                                <p class="text-muted">{{Datapart.images[childIndex].title}}E-Gift Cards (Instant
+                                    Voucher)</p>
+                                <p class="font14">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In, cumque. Porro obcaecati
+                                    blanditiis, aliquid modi repellat nam eaque temporibus. Pariatur enim ab laudantium
+                                    praesentium cumque quod doloremque ullam vero quae nam perferendis, nostrum,
+                                    nesciunt
+                                    sit?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <i class="fa-solid fa-chevron-left leftArrow" style="color: #000000;"></i>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <i class="fa-solid fa-chevron-right rightArrow" style="color: #000000;"></i>
+                        <span class="visually-hidden"></span>
+                    </button>
+                </div>
+
+
+
+                <span class="text-primary cursor" (click)="showModal();modalBorder=1">T&C*</span>
+
+
+
+            </div>
+
+            <div class="col-md-4 col-lg-3 pe-1 pt-lg-4 ps-4 d-none d-md-inline-block">
+                <button class="btn border rightButton1 Buttonhov rounded-pill text-muted form-control"
+                    (click)="showModal();modalBorder=2">INSTRUCTIONS</button>
+                <button class="btn border rightButton2 Buttonhov rounded-pill text-muted form-control my-3"
+                    (click)="showModal();modalBorder=4">STORE LOCATOR</button>
+                <button class="btn border rightButton3 Buttonhov rounded-pill text-muted form-control"
+                    (click)="showModal();modalBorder=3">HOW TO REDEEM?</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row mx-0 mt-3 relative ">
+        <div class="col-lg-9 col-md-8 px-0 ">
+
+            <div class="px-md-2 mx-0 ">
+
+                <div class="bg-white">
+
+                    <div class="input-group p-3 cupon ">
+                        <input type="text" class="form-control rounded-0 ps-4 promocod" placeholder="Enter Code">
+                        <span class="input-group-text cursor rounded-0 px-2" id="basic-addon2 ">APPLY</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="mt-3 sticky relative px-md-2">
+
+                <div class="bg-white p-2 ">
+                    <p class="mb-0 text-muted ms-1">I will pay using</p>
+                    <owl-carousel-o [options]="customOptions" #carousel>
+
+                        <ng-container *ngFor="let i of [].constructor(5); index as index">
+                            <ng-template carouselSlide>
+                                <div class="text-center relative m-1 border cursor py-3" (click)="isGreen = index">
+                                    <div class="pay d-flex mx-0">
+                                        <div class="borderRight px-2">
+                                            <img src="https://www.gyftr.com/_next/image?url=https%3A%2F%2Fcdn.gyftr.com%2Fgyftrweb%2Fpg%2Flogo_upi-(1)1653394392.png&w=48&q=75"
+                                                class="img-fluid">
+                                        </div>
+                                        <div class="ms-2 text-start lh-sm">
+                                            <p class="mb-0 font13">UPI</p>
+                                            <p class="mb-0 font10">2% Discount</p>
+
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="isGreen == index" class="payGreen text-end">
+                                        <i class="fa-solid fa-circle-check" style="color: #119E00;"></i>
+                                    </div>
+                                </div>
+
+                            </ng-template>
+
+                        </ng-container>
+
+
+
+                    </owl-carousel-o>
+                </div>
+
+                <i class="fa fa-chevron-left leftArrowUPI d-none d-sm-block cursor" aria-hidden="true"
+                    (click)="onPreviousClick(0)"> </i>
+                <i class='fa fa-chevron-right  rightArrowUPI d-none d-sm-block cursor' (click)="onNextClick(0)"
+                    aria-hidden='true'></i>
+            </div>
+
+
+            <div class="row mx-0 mt-2">
+
+                <div class="col-lg-4 col-6 pFont12 font14 p-1 p-md-2" *ngFor="let item of Discount">
+                    <div class="off bg-white p-2">
+                        <h5 class="mb-0 p-1 fw-bold"><i class="fa-solid fa-indian-rupee-sign"></i> {{item.rupee}}</h5>
+                        <div class="">
+                            <div class="d-flex mx-0 my-2 p-2 rowBack">
+                                <div class="me-auto text-muted">DISCOUNT (2%)</div>
+                                <div class="">{{item.discount}}</div>
+                            </div>
+                            <div class="d-flex mx-0 my-2 p-2 rowBack">
+                                <div class="me-auto text-muted">P (EARN)</div>
+                                <div class="">{{item.earn}}</div>
+                            </div>
+                            <div class="d-flex mx-0 my-2 p-2 green rowBack">
+                                <div class="me-auto">SAVING(<i class="fa-solid fa-indian-rupee-sign"></i>)
+                                </div>
+                                <div class="">{{item.saving}}</div>
+                            </div>
+                            <div class="d-flex mx-0 my-2 p-2 blue rowBack">
+                                <div class="me-auto">YOU PAY(<i class="fa-solid fa-indian-rupee-sign"></i>)
+                                </div>
+                                <div class="">{{item.youpay}}</div>
+                            </div>
+
+                            <button class="descButton rounded-0 border-0 py-2 form-control Buttonhov"
+                                (click)="ModalShow()">ADD
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 px-1 pe-0 d-none d-md-inline-block">
+            <div class="bg-white">
+                <h5 class="mb-0 py-3 bg-dark ps-3" style="color: white;">CART</h5>
+
+                <div class="content px-0 ">
+                    <p class="mb-0 p-3 border-bottom">You Pay</p>
+
+
+                    <div class="p-3 border-bottom font14">
+
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                            (change)="onCheckboxChange($event)">
+                        <label class="form-check-label text-muted ps-2" for="flexCheckDefault">
+                            <i class="fa-solid fa-gift"></i> I am Gyfting</label><br>
+                    </div>
+
+                    <div class="p-3 border-bottom font14" *ngIf="!isChecked">
+
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                        <label class="form-check-label text-muted ps-2" for="flexCheckDefault1">
+                            <i class="fa-brands fa-whatsapp" style="color: #107012;"></i>Share on Whatsapp +
+                            Email</label>
+                    </div>
+
+
+                    <div class="p-3">
+                        <button class="descButton rounded-0 border-0 py-2 form-control Buttonhov"
+                            (click)="ModalShow()">View / Edit
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-md-none bg-white py-3 mt-3">
+
+            <input class="rounded-pill form-control" placeholder="Check Voucher Status">
+            <br>
+            <button class="btn border rightButton1 Buttonhov rounded-pill text-muted form-control buttonColor pFont12"
+                (click)="showModal();modalBorder=2">INSTRUCTIONS</button>
+            <button
+                class="btn border rightButton2 Buttonhov rounded-pill text-muted form-control my-3 buttonColor pFont12"
+                (click)="showModal();modalBorder=4">STORE
+                LOCATOR</button>
+            <button class="btn border rightButton3 Buttonhov rounded-pill text-muted form-control  buttonColor pFont12"
+                (click)="showModal();modalBorder=1">
+                T&C</button>
+            <button
+                class="btn my-3 border rightButton3 Buttonhov rounded-pill text-muted form-control buttonColor pFont12"
+                (click)="showModal();modalBorder=3">HOW
+                TO
+                REDEEM?</button>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="mt-3 relative px-2">
+
+        <div class="bg-white p-2 py-3 ">
+
+            <owl-carousel-o [options]="customOptions" #carousel1>
+
+                <ng-container *ngFor="let data of offerImg; index as idx">
+                    <ng-template carouselSlide>
+
+                        <div class="row border mx-1 mx-0 cursor minHeight">
+                            <div class="col-sm-4 col-12 px-0">
+                                <div class="BankImages h-100">
+                                    <img [src]="data.img" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-sm-8 col-12 py-1" [ngClass]="{'bgblue': idx%2 == 0, 'bgred' : idx%2 !=0}">
+                                <p class="my-0 ellipsis-text  ">{{data.heading}}</p>
+                                <p class="my-0 font13 lh-1 h-100">{{data.text}}</p>
+                            </div>
+                        </div>
+
+                    </ng-template>
+
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+
+        <i class="fa fa-chevron-left leftArrowBank d-none d-sm-block cursor" aria-hidden="true"
+            (click)="onPreviousClick(1)"> </i>
+        <i class='fa fa-chevron-right  rightArrowBank d-none d-sm-block cursor' (click)="onNextClick(1)"
+            aria-hidden='true'></i>
+    </div>
+
+
+
+    <div class="relative mt-3 px-1">
+        <owl-carousel-o [options]="customOptionsBottom" #carousel2>
+
+            <ng-container *ngFor="let img of this.Datapart.images; index as index">
+                <ng-template carouselSlide>
+                    <div class="text-center px-1">
+                        <div class="border cursor bg-white" (click)="navToSelf(index);  ">
+                            <img [src]="img.img" style="width: 176px !important;" height="136" class="img-fluid m-auto">
+                            <div class="relative" style="min-height: 50px;">
+                                <p class="my-0 lh-1"
+                                    style="font-size: 11px;color: gray; position: absolute; bottom: 22px; left:0;right: 0;">
+                                    {{img.title}}</p>
+                                <p class="mb-0 font12 fw-bold"
+                                    style="background-color: #f1fcff; position: absolute; bottom: 0; left:0;right: 0;">
+                                    {{img.saving}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </ng-template>
+            </ng-container>
+
+        </owl-carousel-o>
+
+        <i class="fa fa-chevron-left leftArrowimages d-none d-sm-block cursor" aria-hidden="true"
+            (click)="onPreviousClick(2)"> </i>
+        <i class='fa fa-chevron-right  rigtArrowimages d-none d-sm-block cursor' (click)="onNextClick(2)"
+            aria-hidden='true'></i>
+    </div>
+
+
+
+</div>
+
+
+<div class="container-xl aboutGyFTR px-sm-2 px-1     mt-3 ">
+    <mat-accordion>
+
+        <mat-expansion-panel class="rounded-0" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    More About {{Datapart.images[childIndex].title}} GIFT VOUCHER
+                </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <div style="font-size: 12px;">
+                <div *ngFor="let item of MoreAbout[0].MoreAboutGifter; index as idx"><br *ngIf="idx==0"
+                        class="border-bottom"><br>
+                    <p style="font-size: 15px;" [innerHTML]="item.heading" class="fw-bold"></p>
+                    <div [innerHTML]="item.text"></div>
+                </div>
+            </div>
+            <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+<app-footer></app-footer>
+
+
+
+
+<div bsModal #lgModal1="bs-modal" class="modal fade " style="z-index: 5000;" tabindex="-1" role="dialog"
+    aria-labelledby="dialog-sizes-name1">
+    <div class="modal-dialog modal-lg modal-dialog-centered custom-modal-width ">
+        <div class="modal-content">
+
+            <div class="modal-body p-0 ">
+                <button type="button" class="btn-close close pull-right m-2 absolute" (click)="closeModal()"
+                    aria-label="Close">
+                    <span aria-hidden="true" class="visually-hidden">&times;</span>
+                </button>
+
+                <div class="modalContent px-3 rounded-0">
+
+                    <div class="navModal" style="overflow: auto; white-space: nowrap;">
+                   
+                        <ul class=" font14 gray modalNav border-bottom px-0 d-flex mt-3">
+                            <li class="cursor relative py-2 list-inline-item me-0" (click)="modalBorder=1"
+                                [ngClass]="{'bottomBorder':modalBorder==1}">
+                                <img
+                                    src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Fbr-3.png&w=32&q=75">
+                                <span class="ps-2 text-uppercase fs-400">Terms & Conditions</span>
+
+                            </li>
+                            <li class="cursor relative py-2 list-inline-item me-0"  (click)="modalBorder=2"
+                                [ngClass]="{'bottomBorder':modalBorder==2}">
+                                <img
+                                    src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Fbr-3.png&w=32&q=75">
+                                <span class="ps-2 text-uppercase fs-400">Important INSTRUCTIONS</span>
+                            </li>
+                            <li class="cursor relative py-2 list-inline-item me-0" (click)="modalBorder=3"
+                                [ngClass]="{'bottomBorder':modalBorder==3}">
+                                <img
+                                    src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Fbr-3.png&w=32&q=75">
+                                <span class="ps-2 text-uppercase fs-400">How to use</span>
+                            </li>
+                            <li class="cursor relative py-2 list-inline-item me-0" (click)="modalBorder=4"
+                                [ngClass]="{'bottomBorder':modalBorder==4}">
+                                <img
+                                    src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Fbr-3.png&w=32&q=75">
+                                <span class="ps-2 text-uppercase fs-400">STORE LOCATOR</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="row mx-0 mt-3 ">
+
+                        <div class="col-12 px-0" *ngIf="modalBorder ==1">
+                            <p class="mb-1 fw-bold">BigBasket</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, qui laudantium
+                                voluptates eius quo
+                                odio temporibus ab harum nisi officiis quis quod incidunt ut et iure inventore modi ex
+                                ea suscipit
+                                consectetur enim repudiandae quos! Accusamus similique quae voluptates eos temporibus
+                                vero porro
+                                exercitationem dignissimos quod, repellat recusandae earum suscipit nobis nulla error
+                                eligendi amet
+                                perspiciatis reprehenderit, debitis, sunt cupiditate aliquid ad quas eum? Corrupti
+                                impedit repudiandae
+                                obcaecati, esse, beatae dolores nam fugiat est itaque debitis eligendi consectetur
+                                voluptatem ab molestiae.
+                                Odit iusto ex dolor corporis aut, cupiditate non incidunt placeat quam. Debitis
+                                doloremque vitae perferendis
+                                voluptatum labore voluptatibus unde est eaque amet autem, libero explicabo molestias
+                                natus corrupti
+                                suscipit! Ad praesentium rem ducimus quam quod! Sit nisi, totam amet porro minima et
+                                labore aperiam quaerat
+                                corrupti cumque in voluptate praesentium? Fugit vero officia quas magni, soluta ab
+                                praesentium culpa debitis
+                                quidem nostrum, laudantium expedita placeat, amet molestias aut delectus! Provident
+                                reprehenderit, adipisci,
+                                corrupti quia impedit recusandae nobis tempore nulla culpa molestias unde, quibusdam
+                                illo vitae officiis
+                                reiciendis quos minima non ab eligendi exercitationem est eos. Animi necessitatibus
+                                fugiat nostrum
+                                distinctio eum minus ullam rem repudiandae quas fugit, officia quibusdam illum aperiam
+                                vitae ratione
+                                dignissimos non quia! Ipsum impedit enim debitis doloremque maxime nihil quaerat
+                                laboriosam ea ipsa ratione
+                                quidem fugiat, quibusdam rem accusantium earum, quae neque omnis vitae numquam repellat
+                                voluptate. Modi
+                                nulla vitae fugit saepe neque possimus expedita sapiente corrupti consequatur delectus!
+                            </p>
+                        </div>
+
+                        <div class="col-12 px-0" *ngIf="modalBorder == 2">
+                            <p class="fw-bold">Big Basket Important Instructions</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi nihil rerum placeat quasi
+                                ex at quam enim consequatur quaerat unde voluptas quod modi, doloremque temporibus
+                                tenetur delectus et possimus nemo?</p>
+                        </div>
+
+                        <div class="col-12 px-0" *ngIf="modalBorder == 3">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel similique provident atque
+                            neque voluptate, labore quis maxime id consectetur alias modi obcaecati magnam facilis rerum
+                            illo voluptatibus quaerat sequi incidunt.
+                        </div>
+
+                        <div class="col-12 px-0  " *ngIf="modalBorder == 4">
+
+
+                            <div class="col-12 align-self-center ">
+                                <div class="input-group relative">
+                                    <input type="text" class="form-control rounded-0 " placeholder="Enter City Name"
+                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <span class="input-group-text cursor searchButtonn text-center rounded-0 "
+                                        id="basic-addon2 ">Search</span>
+
+                                </div>
+                            </div>
+                            <p class="py-3 text-center fw-bold mb-0">Enter City Name</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+ 

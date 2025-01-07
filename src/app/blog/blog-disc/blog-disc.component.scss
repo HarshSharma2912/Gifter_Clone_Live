@@ -1,0 +1,40 @@
+.mainConetent{
+    padding-right: 60px;
+}
+@media screen and (max-width:767px) {
+    .mainConetent{
+        padding-right: 0px;
+    }
+}
+.backIcon{
+    background-color: #396ace;
+    color: #fcfcfc;
+    padding: 1px 8px;
+    border-radius: 2px;
+}
+.bortop{
+    border-top:solid 4px black;
+}
+.borbottom{
+    border-BOTTOM:solid 4px black;
+
+}
+
+ 
+input,textarea{
+    background-color: #f7f7f7;
+}
+input:focus , textarea:focus {
+    background-color: white;
+  }
+.postComment{
+    background: black;
+    color: white;
+    padding: 11px 18px;
+}
+.postComment:hover{
+    background-color: #396ace;
+}
+.blue{
+    color: #396ace;
+}

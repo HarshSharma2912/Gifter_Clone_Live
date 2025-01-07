@@ -1,0 +1,183 @@
+
+// $fa-font-path: "../node_modules/font-awesome/fonts";
+// @import "../node_modules/font-awesome/scss/font-awesome.scss";
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$BenepikGifter-primary: mat.define-palette(mat.$indigo-palette);
+$BenepikGifter-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$BenepikGifter-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$BenepikGifter-theme: mat.define-light-theme((
+  color: (
+    primary: $BenepikGifter-primary,
+    accent: $BenepikGifter-accent,
+    warn: $BenepikGifter-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($BenepikGifter-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+ 
+@import 'ngx-toastr/toastr';
+
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+row{
+  margin: 0 !important;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color:#f3f3f3 !important;
+    
+ }
+
+ .no-scroll {
+  height: 100%;
+  overflow-y: hidden;
+  
+}
+ 
+/* Importing Bootstrap SCSS file. */
+ 
+.navScroll{
+  overflow: auto;
+  white-space: nowrap;
+}
+ 
+ .font14{
+  font-size: 14px;
+ }
+ .font13{
+  font-size: 13px;
+ }
+.font12{
+  font-size: 12px;
+}
+@media (max-width: 576px) {
+  .pFont13{
+    font-size: 13px;
+  }
+  .pFont12{
+    font-size: 12px !important;
+  }
+  .pFont14  {
+    font-size: 14px;
+  }
+}
+
+.wordBreak{
+  word-break: break-word;
+}
+.relative{
+  position: relative;
+}
+
+.cursor{
+  cursor: pointer;
+}
+.font10{
+  font-size: 10px;
+}
+
+
+.bgblue{
+  background-color: #0764a8;
+  color:white;
+}
+
+.bgred{
+  background-color: #ac1a5c;
+  color: white;
+}
+
+
+.BankImages{
+  display: flex;
+  padding: 5px;
+  background: #f8f5f1 url(https://www.gyftr.com/static/images/chiglet-bg.png) center center;
+  align-items: center;
+  justify-content: center;
+ }
+/* Importing Bootstrap SCSS file. */ 
+
+
+/* Add padding to the top of the <body> element to account for the fixed navigation bar */
+/* Apply styles to the <body> element to account for the fixed navigation bar */
+/* Apply styles to the <body> element to account for the fixed navigation bar */
+/* Apply styles to the <body> element to account for the fixed navigation bar */
+/* Set the width of the scrollbar */
+// body::-webkit-scrollbar {
+//   width: 10px;  
+// }
+// /* Set the color of the scrollbar thumb and track */
+// body::-webkit-scrollbar {
+//   width: 5px;
+//  }
+// /* Set the color of the scrollbar track */
+ 
+// /* Set the color of the scrollbar thumb */
+// body::-webkit-scrollbar-thumb {
+//   background-color: #eeeeee; /* Adjust the color as needed */
+// }
+// /* Set the width of the scrollbar track */
+// .commonBg{
+//   background-color: #f3f3f3 !important;
+
+//  }
+
+
+
+//  topHeader
+.searchButton{
+  background-color: #222020;
+ z-index: 100;
+ top:-1px !important;
+}
+
+.searchButton:hover{
+  opacity: .7;
+}
+.searchicon{
+  background-color: transparent;
+  position: absolute;
+  left: 0 !important;
+  top:4px;
+  z-index: 100;
+} 
+
+.letterspace{
+  letter-spacing: 1px;
+}
+.gray{
+  color: gray;
+}
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+
+
+.toast-container{
+  position: fixed !important;
+ 
+}

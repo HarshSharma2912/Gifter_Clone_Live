@@ -1,0 +1,152 @@
+<!-- <div bsModal #lgModal="bs-modal" #myModalElement class="modal fade " tabindex="-1" role="dialog"
+    aria-labelledby="dialog-sizes-name1">
+    <div class="modal-dialog modal-lg modal-dialog-centered custom-modal-width ">
+        <div class="modal-content">
+
+            <div class="modal-body p-0">
+                <button type="button" class="btn-close close pull-right m-2 absolute" (click)="closeModal()"
+                    aria-label="Close">
+                    <span aria-hidden="true" class="visually-hidden">&times;</span>
+                </button>
+                <div class="row mx-0">
+                    <div class="col-sm-6 py-5 text-center"
+                        style="background-color: #B8D64D; color: white; padding: 100px 0;">
+                        <p class="fs-3 lh-sm">Your journey to <br> save begins</p>
+                        <p class="lh-sm">Up to 40% discount on 220+<br> brand
+                            Vouchers</p>
+
+                        <div>
+                            <img src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Flogin_img.png&w=384&q=75"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 align-self-center text-start p-4" *ngIf="modalContent == -1">
+                        <p class="fs-4 pb-3">Log In/Sign Up</p>
+                        <input type="text" placeholder="Mobile Number" [(ngModel)]="mobileNumber" class="form-control">
+                        <p style="font-size: 12px;" class="py-3 mb-0">I agree to
+                            GyFTR's <span (click)="navigateTo('/footer/terms')" class="cursor">T&C</span> of Use and
+                            <span (click)="navigateTo('/footer/terms')" class="cursor"> Privacy Policy</span>
+                        </p>
+                        <button class="btn form-control" style="background-color: #e3f2ff;" (click)="checkValidNumber()"
+                            (keydown)="checkLength()">Next</button>
+
+                        <div class=" text-center  p-2 text-muted text-center font12">© 2023. Vouchagram India Pvt. Ltd
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 align-self-center text-start p-4" *ngIf="modalContent == 1">
+                        <p class="fs-4 ">Sign Up</p>
+                        <p class="mb-1">{{mobileNumber}}</p>
+                        <input type="text" placeholder="Enter Full Name" [(ngModel)]="Name" class="form-control">
+                        <input type="text" placeholder="Enter E-mail" [(ngModel)]="Email" class="form-control my-3">
+                        <input type="text" placeholder="Enter OTP" [(ngModel)]="otp" class="form-control mb-1">
+                        <p class="gray text-end font12 cursor"> <span (click)="checkValidNumber()">Resend OTP</span></p>
+
+                        <button class="btn form-control" style="background-color: #e3f2ff;"
+                            (click)="validateData()">Next</button>
+
+                        <div class=" text-center  p-2 text-muted text-center font12">© 2023. Vouchagram India Pvt. Ltd
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+ 
+
+<div>
+
+    <div class="modal   fade" [ngClass]="{'modal-lg':ModalNumber==1}" id="exaCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true"  [attr.data-bs-backdrop]="static">
+        <div class="modal-dialog modal-dialog-centered curstom-margin" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-0"  *ngIf="ModalNumber ==1">
+                    <button type="button" class="btn-close close pull-right m-2 absolute" data-bs-dismiss="modal"
+                        aria-label="Close" (click)="closeModal()" aria-label="Close">
+                        <span aria-hidden="true" class="visually-hidden">&times;</span>
+                    </button>
+                    <div class="row mx-0">
+                        <div class="col-sm-6 py-5 text-center"
+                            style="background-color: #B8D64D; color: white; padding: 100px 0;">
+                            <p class="fs-3 lh-sm">Your journey to <br> save begins</p>
+                            <p class="lh-sm">Up to 40% discount on 220+<br> brand
+                                Vouchers</p>
+
+                            <div>
+                                <img src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Flogin_img.png&w=384&q=75"
+                                    class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 align-self-center text-start p-4" *ngIf="modalContent == -1">
+                            <p class="fs-4 pb-3">Log In/Sign Up</p>
+                            <input type="text" placeholder="Mobile Number" [(ngModel)]="mobileNumber"
+                                class="form-control">
+                            <p style="font-size: 12px;" class="py-3 mb-0">I agree to
+                                GyFTR's <span (click)="navigateTo('/footer/terms')" class="cursor">T&C</span> of Use and
+                                <span (click)="navigateTo('/footer/terms')" class="cursor"> Privacy Policy</span>
+                            </p>
+                            <button class="btn form-control" style="background-color: #e3f2ff;"
+                                (click)="checkValidNumber()" (keydown)="checkLength()">Next</button>
+
+                            <div class=" text-center  p-2 text-muted text-center font12">© 2023. Vouchagram India Pvt.
+                                Ltd
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 align-self-center text-start p-4" *ngIf="modalContent == 1">
+                            <p class="fs-4 ">Sign Up</p>
+                            <p class="mb-1">{{mobileNumber}}</p>
+                            <input type="text" placeholder="Enter Full Name" [(ngModel)]="Name" class="form-control">
+                            <input type="text" placeholder="Enter E-mail" [(ngModel)]="Email" class="form-control my-3">
+                            <input type="text" placeholder="Enter OTP" [(ngModel)]="otp" class="form-control mb-1">
+                            <p class="gray text-end font12 cursor"> <span (click)="checkValidNumber()">Resend OTP</span>
+                            </p>
+
+                            <button class="btn form-control" style="background-color: #e3f2ff;"
+                                (click)="validateData()">Next</button>
+
+                            <div class=" text-center  p-2 text-muted text-center font12">© 2023. Vouchagram India Pvt.
+                                Ltd
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-body px-4"  *ngIf="ModalNumber == 2">
+                    <button type="button" class="btn-close close pull-right m-2 absolute" data-bs-dismiss="modal"
+                    aria-label="Close" (click)="closeModal()" aria-label="Close">
+                    <span aria-hidden="true" class="visually-hidden">&times;</span>
+                </button>
+                    <div class="m-auto mt-4">
+                        <p class="fs-5 text-center">CHECK VOUCHER STATUS</p>
+                        <input type="text" class="form-control" placeholder="Enter Voucher Code" [(ngModel)]="voucherCode">
+                        <input type="text" class="form-control my-2" [(ngModel)]="InputCaptcha"
+                            placeholder="Enter Captcha" (input)="checkValue()">
+                        <div class="row mx-0 justify-content-center">
+                            <div class="captcha fs-3 fw-bold  col-auto"
+                                style=" color:white; background-image: url(https://d3i71xaburhd42.cloudfront.net/3a279df498d9c35886fe9b546a9286010cdad543/4-Figure6-1.png);">
+                                {{captchaX}}+{{captchaY}}=?
+                            </div>
+                            <div class="col-auto px-0">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXTdy61FqBPbxbSPRR-k6V7f_Gva5bMldk8PN50bqZ&s"
+                                    width="50" class="cursor" (click)="changeCaptcha()">
+                            </div>
+                        </div>
+
+
+ 
+                        <div class="submit text-center cursor mt-3 py-2 form-control border-0" style="background-color: #e3f2ff;" (click)="ValidateVoucher()">SUBMIT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ 

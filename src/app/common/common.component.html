@@ -1,0 +1,223 @@
+<app-top-header></app-top-header>
+<app-header class="d-none d-md-block"></app-header>
+
+<img [src]="Data?.Banner" width="100%">
+
+<div class="container-xl  d-none d-lg-block">
+    <div class="row py-3 pb-0 ">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+            <p class="mb-0 fs-4 fw-bold dataHeading">{{Data.Heading}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-xl">
+
+
+    <div class="row mx-0">
+
+
+        <div class="col-lg-3 col-12 px-1 mt-3 ">
+
+
+            <div class="row mx-0 py-2 d-lg-none" style="border: solid black 1px;" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasBottom1">
+                <div class="col-6 px-2">
+                    {{Data.Heading}}
+                </div>
+                <div class="col-6 text-end px-2">
+                    <img *ngIf="isdiscount == 0"
+                        src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Ffilter-icon.png&w=32&q=75"
+                        class="img-fluid">
+                </div>
+            </div>
+
+
+            <div class=" offcanvas-bottom  pb-md-0 pb-5" tabindex="-1" id="offcanvasBottom1"
+                aria-labelledby="offcanvasBottomLabel" [ngClass]="{'offcanvas': isMobile,  }">
+
+                <div class="offcanvas-header border-bottom d-lg-none">
+                    <h5 class="offcanvas-title text-muted" id="offcanvasBottomLabel">Filter</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body small py-0">
+
+                    <div class="bg-white  px-3">
+
+
+                        <div class="d-lg-block d-none">
+
+
+                            <div class="row py-3 border-bottom mx-0 ">
+                                <div class="col-6 px-0">
+                                    <p class="mb-0 fw-bold">Filters</p>
+                                </div>
+                                <div class="col-6 text-end px-0">
+                                    <img *ngIf="isdiscount == 0"
+                                        src="https://www.gyftr.com/_next/image?url=%2Fstatic%2Fimages%2Ffilter-icon.png&w=32&q=75"
+                                        class="img-fluid">
+                                    <span *ngIf="isdiscount>0" class="cursor font reset" (click)="reset()">Reset
+                                        All</span>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="py-3 border-bottom">
+
+
+                            <div class="relative ">
+                                <input #toggleButton [(ngModel)]="searchTerm" class="form-control font14 ps-4 rounded-0"
+                                    placeholder="Serch" (input)="filterAnimals();"  (click)="toggleMenu()"
+                                   />
+                                <ul class="searchList border  ps-0" *ngIf="searchList"  #menu>
+                                    <li class="border-bottom font13 p-2 gray cursor"
+                                        [ngClass]="{'greenHover':searchEnter == index}"
+                                        (mouseenter)="searchEnter = index" (mouseout)="searchEnter = -1"
+                                        (click)=" listItemIndex(index); " [id]="index"
+                                        *ngFor="let value of animals,index as index">{{value}}</li>
+                                </ul>
+
+                                <i class="searchIcon fa-solid fa-magnifying-glass"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="py-3 border-bottom">
+                            <p class="">DISCOUNTS</p>
+                            <div class="row mx-0">
+                                <div class="col-6 box">
+                                    <div class="grayBox" [ngClass]="{'grayBack':isdiscount == 5}"
+                                        (click)="filterDiscount(0,5)">
+                                        0%-5%</div>
+                                </div>
+                                <div class="col-6 box ">
+                                    <div class="grayBox" [ngClass]="{'grayBack':isdiscount == 10}"
+                                        (click)="filterDiscount(6,10)">
+                                        6%-10%</div>
+                                </div>
+                                <div class="col-6 box">
+                                    <div class="grayBox" [ngClass]="{'grayBack':isdiscount == 25}"
+                                        (click)="filterDiscount(11,25)">
+                                        11%-25%</div>
+                                </div>
+                                <div class="col-6 box">
+                                    <div class="grayBox" [ngClass]="{'grayBack':isdiscount == 100}"
+                                        (click)="filterDiscount(26,100)">26%-Above</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="py-3 border-bottom">
+                            <p class="">BOGO</p>
+                            <div class="row mx-0">
+                                <div class="col-6 box">
+                                    <div class="grayBox">Yes</div>
+                                </div>
+                                <div class="col-6 box">
+                                    <div class="grayBox">No</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="py-3 border-bottom">
+                            <p class="">BRAND</p>
+                            <div class="row mx-0">
+                                <div class="col-6 box">
+                                    <div class="grayBox ">Online</div>
+                                </div>
+                                <div class="col-6 box">
+                                    <div class="grayBox ">Offline</div>
+                                </div>
+                                <div class="col-12 box">
+                                    <div class="grayBox ">Both</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="py-3">
+                            <p>CATEGORIES</p>
+
+                            <div class="px-3" *ngFor="let cate of Categories; index as idx">
+                                <div class="font py-2 row " (click)="changeCategory(idx)"
+                                    [ngClass]="{'cateValue': isCheck == idx ,'cateValue1': hoverCheck == idx+1 }"
+                                    (mouseenter)="hoverCheck = idx+1" (mouseleave)="hoverCheck =-1">
+                                    <div class="col-1 px-0 text-end"><i *ngIf="isCheck == idx || hoverCheck == idx+1"
+                                            class="fa fa-check" aria-hidden="true"></i></div>
+                                    <div class="col-11 px-0"> {{cate.Heading}}</div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="px-0 col-lg-9 col-12 mt-lg-0 mt-3">
+
+
+            <div class="row mx-0 ">
+
+                <div class="col-xl-3 col-md-4 col-6 p-1 mt-0 ps-lg-3 py-lg-0 pe-lg-0 mt-lg-3"
+                    *ngFor="let img of filterImg; index as index">
+
+                    <div class="text-center bg-white cursor   p-2" style="position: relative; ">
+
+                        <div (click)="passIndexToDes(index)" >
+
+                            <div class="" >
+                                <img [src]="img.img" width="176" height="136" class="img-fluid">
+                            </div>
+
+                            <div class="relative font12" style="min-height: 50px;">
+                                <p class="my-0 lh-1 mb-1"
+                                    style="color: grayBack; position: absolute; bottom: 24px; left:0;right: 0;">
+                                    {{img.title}}</p>
+                                <p class="mb-0 fw-bold"
+                                    style="background-color: #f1fcff; position: absolute; bottom: 0; left:0;right: 0;">
+                                    {{img.saving}}
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<app-footer></app-footer>
